@@ -78,7 +78,7 @@ func (vec *Vector) parseGeneric(depth, offset int, node *vector.Node) (int, erro
 		}
 
 		var nhi int
-		if nhi = bytealg.IndexByteAtBytes(src, ',', offset); nhi == -1 {
+		if nhi = vector.IndexByteAt(src, ',', offset); nhi == -1 {
 			nhi = n
 		}
 
@@ -128,7 +128,7 @@ func (vec *Vector) parseNode(depth, offset int, qlo, qhi int, root *vector.Node)
 
 		node, i := vec.AcquireChildWithType(root, depth, vector.TypeObject)
 		node.SetOffset(vec.Index.Len(depth + 1))
-		p := bytealg.IndexByteAtBytes(src, '-', offset)
+		p := vector.IndexByteAt(src, '-', offset)
 		if p == -1 {
 			p = n
 		}
