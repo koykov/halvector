@@ -9,6 +9,7 @@ import (
 	"testing"
 
 	"github.com/koykov/byteconv"
+	"github.com/stretchr/testify/assert"
 )
 
 type stage struct {
@@ -74,16 +75,12 @@ func TestParser(t *testing.T) {
 			vec := Acquire()
 			if err := vec.ParseString(stg.hal); err != nil {
 				if stg.err != nil {
-					if stg.err.Error() != err.Error() {
-						t.Error(err)
-					}
+					assert.True(t, stg.err.Error() == err.Error())
 				}
 				return
 			}
 			_ = vec.Sort().Beautify(&buf)
-			if stg.expect != buf.String() {
-				t.Errorf("expect: %s\ngot: %s", stg.expect, buf.String())
-			}
+			assert.Equal(t, stg.expect, buf.String())
 		})
 	}
 }
@@ -101,17 +98,18 @@ func BenchmarkParser(b *testing.B) {
 				buf.Reset()
 				vec := Acquire()
 				if err := vec.ParseString(stg.hal); err != nil {
-					if stg.err != nil {
-						if stg.err.Error() != err.Error() {
-							b.Error(err)
-						}
+					if stg.err == nil {
+						Release(vec)
+						return
 					}
-					return
+					Release(vec)
+					continue
 				}
 				_ = vec.Sort().Beautify(&buf)
-				exp := buf.Bytes()
-				if !bytes.Equal(byteconv.S2B(stg.expect), exp) {
-					b.Errorf("expect: %s\ngot: %s", stg.expect, buf.String())
+				assert.True(b, stg.expect == byteconv.B2S(buf.Bytes()))
+				if stg.expect != byteconv.B2S(buf.Bytes()) {
+					b.Log(stg.expect)
+					b.Log(buf.String())
 				}
 				Release(vec)
 			}
