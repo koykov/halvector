@@ -17,7 +17,7 @@ type Vector struct {
 func NewVector() *Vector {
 	vec := &Vector{}
 	vec.SetBit(vector.FlagInit, true)
-	vec.Helper = helper
+	vec.SetCodec(Codec{})
 	return vec
 }
 

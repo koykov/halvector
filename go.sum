@@ -12,8 +12,8 @@ github.com/koykov/indirect v1.0.1 h1:1veVipIWBeklFHMvzuwhL82X5eDaJzN+hPeVGRvu22Y
 github.com/koykov/indirect v1.0.1/go.mod h1:2qWC0hrIHIexlKaqPA0VWEa0s2V/qxxNJv7XPncnh2I=
 github.com/koykov/simd v0.0.13 h1:xQYiMWwURf9/uJfjDKGrZYpaJ8obMXp9xzQUH5PmDHM=
 github.com/koykov/simd v0.0.13/go.mod h1:sxZxJ0LR+ZMZ85Gg6Ujd4ABNst4bNf9ylh894fpohp8=
-github.com/koykov/vector v1.3.0 h1:geNl4iwmobNxGy2Xwgw2jyHukqWOYU34uK6dD1pPTt4=
-github.com/koykov/vector v1.3.0/go.mod h1:AKnSRGVhmwsfeG4KMoBjo4FGJyT/Od8UseX9Itxq1Rc=
+github.com/koykov/vector v1.3.1-0.20261002211017-fdd2c0c30bff h1:ZGMX/J6t4t98pyT+G+d/VpkC9PFkPam1gCpOBnM8swI=
+github.com/koykov/vector v1.3.1-0.20261002211017-fdd2c0c30bff/go.mod h1:AKnSRGVhmwsfeG4KMoBjo4FGJyT/Od8UseX9Itxq1Rc=
 github.com/stretchr/testify v1.12.1 h1:EuwCh5fleGS7H32xRwO3wRGT7DxrDhLAT6FF8MpWDWE=
 github.com/stretchr/testify v1.12.1/go.mod h1:MDEgiDPPsNp5cuIrHPPCyornHKgEVbtFUmoNlxoYthg=
 go.yaml.in/yaml/v3 v3.0.5 h1:N6y/pJk8buWs9NY5ERU2HSMfm+IuD/OtfdAnq6kESPw=
