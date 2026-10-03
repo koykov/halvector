@@ -5,7 +5,7 @@ go 1.18
 require (
 	github.com/koykov/bytealg v1.0.7
 	github.com/koykov/byteconv v1.0.1
-	github.com/koykov/vector v1.3.0
+	github.com/koykov/vector v1.3.1-0.20261002211017-fdd2c0c30bff
 	github.com/stretchr/testify v1.12.1
 )
 
